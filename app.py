@@ -70,21 +70,51 @@ def index():
 def api_ping():
     return jsonify('{ ping: "alive" }')
 
-@app.route('/api/v1/users')
+# Resouces view functions (HTML and API)
+@app.route('/resources')
+@app.route('/resources.html')
+def get_all():
+    try:
+        resources = Resource.query.all()
+        return render_template('resources.html', site=site, resources=resources)
+    except Exception as e:
+        return(str(e))  
+
+@app.route('/api/v1/resources')
+@app.route('/api/resources')
 def api_get_all():
     try:
-        users = User.query.all()
-        # return render_template('get_all.html', site=site)
-        return  jsonify([e.serialize() for e in users])
+        resources = Resource.query.all()
+        return  jsonify([e.serialize() for e in resources])
     except Exception as e:
         return(str(e))
 
 # Housekeeping view functions
 
+@app.route('/about')
+@app.route('/about.html')
+def about():
+    return render_template('about.html', site=site)
+
+@app.route('/ansible_docs')
+@app.route('/ansible_docs.html')
+def ansible_docs():
+    return render_template('ansible_docs.html', site=site)
 
 @app.route('/ping')
+@app.route('/ping.html')
 def ping():
     return render_template('ping.html', site=site)
+
+@app.route('/cheatsheets')
+@app.route('/cheatsheets.html')
+def cheatsheets():
+    return render_template('cheatsheets.html', site=site)
+
+@app.route('/resources_api')
+@app.route('/resources_api.html')
+def resources_api():
+    return render_template('resources_api.html', site=site)
 
 @app.errorhandler(404)                  # Simple 404 Error handler
 def page_not_found(e):

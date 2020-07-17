@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %} {{ site.title }} Ping  {% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Cheatsheets</h1>
+    <h1>Work in Progress</h1>
+    <p>CheatSheets coming here</p>
+  <table class="table">
+    <thead>
+            <tr>
+              <th>Name</th>
+            </tr>
+    </thead>
+    <tbody>
+            <tr>
+              <td><a href="/cheatsheet_ansible_galaxy.html">ansible-galaxy</a></td>
+            </tr>
+            <tr>
+              <td><a href="/cheatsheet_ansible_doc.html">ansible-doc</a></td>
+            </tr>
+            <tr>
+              <td><a href="/cheatsheet_jinja.html">Jinja 2</a></td>
+            </tr>
+            <tr>
+              <td><a href="/cheatsheet_pip.html">pip</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+  <div class="container">
+
+      <div class="page-header">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="http://www.cloudassembler.com/cheatsheets/cheatsheet-pip/" allowfullscreen></iframe>
+        </div>
+      </div>
+  </div>
+
+
+  {% endblock %}    
