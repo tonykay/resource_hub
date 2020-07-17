@@ -17,7 +17,10 @@ bootstrap = Bootstrap(app)              # Setting up bootstrap
 app.config['SECRET_KEY'] = 'r3dh4t1!'   # For now, externalize later
 
 app.config['SQLALCHEMY_DATABASE_URI'] =\
-    'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+    'postgresql://flask:redhat@appdb1:5432/flask_db'
+
+    # 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -125,4 +128,4 @@ def internal_server_error(e):
     return render_templatYe('500.html', site=site), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)    
+    app.run(debug=True, port=8080, host='0.0.0.0')    
