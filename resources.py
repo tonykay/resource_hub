@@ -10,7 +10,7 @@ resources = [
         'name': 'Mastering Ansible 3rd Edition', 
         'description': 'Explores how Ansible works', 
         'author': 'James Freeman, Jesse Keating', 
-        'url': 'https://www.packtpub.com/virtualization-and-cloud/mastering-ansible-third-edition`', 
+        'url': 'https://www.packtpub.com/virtualization-and-cloud/mastering-ansible-third-edition', 
         'source': 'Book' 
     },
     { 
