@@ -17,7 +17,7 @@ bootstrap = Bootstrap(app)              # Setting up bootstrap
 app.config['SECRET_KEY'] = 'r3dh4t1!'   # For now, externalize later
 
 app.config['SQLALCHEMY_DATABASE_URI'] =\
-    'postgresql://flask:redhat@appdb1:5432/flask_db'
+    'postgresql://flask:redhat@database-01:5432/flask_db'
 
     # 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 
